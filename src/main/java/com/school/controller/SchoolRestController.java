@@ -5,7 +5,11 @@ import java.util.List;
 import com.school.dao.LaboratoryRepository;
 import com.school.dao.StudentRepository;
 import com.school.entities.Laboratory;
+import com.school.service.GraphQLService;
+import graphql.ExecutionResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +29,16 @@ public class SchoolRestController {
     private StudentRepository studentRepository;
     @Autowired
     private LaboratoryRepository laboratoryRepository;
+
+    @Autowired
+    private GraphQLService graphQLService;
+
+    // For GraphQL
+    @PostMapping("/students/graphql")
+    public ResponseEntity<Object> getAllStudents(@RequestBody String query) {
+        ExecutionResult execute = graphQLService.getGraphQL().execute(query);
+        return new ResponseEntity<>(execute, HttpStatus.OK);
+    }
 
     @GetMapping("/students")
     public List<Student> students() {

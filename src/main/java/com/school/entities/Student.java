@@ -4,15 +4,14 @@ import java.util.Date;
 
 import javax.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
+@Getter
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

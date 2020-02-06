@@ -40,15 +40,17 @@ public class DemoApplication implements CommandLineRunner {
 
 //            studentRepository.deleteAll();
 
-            Laboratory l1 = laboratoryRepository.save(new Laboratory(null, "UM6P", "um6p@gmail.com", null));
-            Laboratory l2 = laboratoryRepository.save(new Laboratory(null, "LABOMAG", "labomag@gmail.com", null));
-            studentRepository.save(new Student(null, "Hoddini", "Hoddini@", new Date(), l1));
-            studentRepository.save(new Student(null, "HaramBe", "HaramBe@", new Date(), l2));
-            studentRepository.save(new Student(null, "Kobe", "Kobe@", new Date(), l1));
+//            Laboratory l1 = laboratoryRepository.save(new Laboratory(null, "UM6P", "um6p@gmail.com", null));
+//            Laboratory l2 = laboratoryRepository.save(new Laboratory(null, "LABOMAG", "labomag@gmail.com", null));
+//            studentRepository.save(new Student(null, "Hoddini", "Hoddini@", new Date(), l1));
+//            studentRepository.save(new Student(null, "HaramBe", "HaramBe@", new Date(), l2));
+//            studentRepository.save(new Student(null, "Kobe", "Kobe@", new Date(), l1));
 
             studentRepository.findAll().forEach(str -> {
                 System.out.println(str.getName());
             });
+
+
         };
     }
 }

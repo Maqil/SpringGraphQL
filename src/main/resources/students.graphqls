@@ -1,0 +1,14 @@
+#schema {
+# query : Query
+#}
+
+type Query {
+#    allStudent:[Student]
+    student( id: Int): Student
+}
+
+type Student {
+    id: Int
+    name: String
+    email: String
+}

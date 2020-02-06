@@ -13,4 +13,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     @RestResource(path = "/byName")
     public List<Student> findByNameContains(@Param(value = "mc") String mc);
+
 }
